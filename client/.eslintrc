@@ -1,0 +1,6 @@
+{
+  "extends": ["xhmm/ts-react"],
+  "settings": {
+    "polyfills": ["fetch"]
+  }
+}

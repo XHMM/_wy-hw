@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:4.0.2
+    expose:
+      - 27017
+    networks:
+      - todo
+
+  node:
+    build:
+      context: server
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/todos
+    networks:
+      - todo
+
+  client:
+    build:
+      context: client
+    depends_on:
+      - node
+    networks:
+      - todo
+
+networks:
+  todo:
+    driver: bridge
