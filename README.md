@@ -8,7 +8,7 @@
 - 极简的功能设计让使用者摆脱“设置纠结症”。
 
 ### 竞品分析
-|名称| 是否免费可用| 是否有收费解锁新功能 | 是否全平台支持|
+|名称| 是否免费可用| 是否有收费解锁新功能 (鸡肋) | 是否全平台支持|
 |---|---|---|---| 
 |[todolist](https://todoist.com/)| 是| 有| 是 |
 |[microsoft todo](https://todo.microsoft.com/tasks/)| 是| 无| 是|
@@ -39,7 +39,7 @@
 ![data](./images/p-data-flow.jpg)
 
 
-### 里程碑
+### 里程碑 (有误)
 ![milestone](./images/p-milestone.jpg)
 
 ## 用户手册
