@@ -13,12 +13,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Todos } from '~components/Todos';
 import TodoInput from '~components/TodoInput';
 import Img from '~images/bg.jpg'
+import ImgBig from '~images/bg-big.jpg'
 
 const useStyles = makeStyles(theme => {
   return {
     '@global': {
       body: {
-        background: `url(${Img})`,
+        [theme.breakpoints.up('sm')]: {
+          backgroundImage: `url(${ImgBig})`,
+        },
+        [theme.breakpoints.down('sm')]: {
+          backgroundImage: `url(${Img})`,
+        },
         // backgroundAttachment:"fixed",
         backgroundSize: '100% 100%',
         backgroundRepeat: 'no-repeat'
