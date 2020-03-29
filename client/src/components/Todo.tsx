@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => {
   return {
     root: {
       marginBottom: '4px',
+      background: 'rgba(255,255,255,0.85)'
     },
     content: {
       padding: '16px 12px 1px',

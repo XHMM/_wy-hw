@@ -5,24 +5,17 @@ services:
     build:
       args:
         - NODE_ENV=development
-    ports:
-      - 8080:8080 # node server running port
     environment:
-      - PORT=8080
       - NODE_ENV=development
     command: npm run dev
     volumes:
-      - D:/code/tmp_dazuoye/server:/server
+      - D:/code/_wy-hw/server:/server
       - /server/node_modules
 
   client:
-    ports:
-      - 8081:8081 # webpack-dev-server
-      - 8888:8888 # webpack bundle analyzer
     environment:
-      - PORT=8081
       - NODE_ENV=development
     command: npm run dev
     volumes:
-      - D:/code/tmp_dazuoye/client:/client
+      - D:/code/_wy-hw/client:/client
       - /client/node_modules

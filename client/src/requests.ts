@@ -1,4 +1,5 @@
-const HOST = 'http://localhost:8080';
+// @ts-ignore
+const HOST = ENDPOINT;
 
 interface ResponseBase {
   status: number,

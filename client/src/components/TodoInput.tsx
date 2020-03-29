@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => {
       padding: '5px 12px',
       display: 'flex',
       alignItems: 'center',
+      background:'rgba(255,255,255,0.85)'
     },
     input: {
       flex: 1,

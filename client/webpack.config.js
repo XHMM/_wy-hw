@@ -31,7 +31,10 @@ const commonPlugins = [
   new MiniCssExtractPlugin({
     filename: isProd ? '[name].[contenthash].css' : '[name].css',
   }),
-  new LodashModuleReplacementPlugin
+  new LodashModuleReplacementPlugin,
+  new webpack.DefinePlugin({
+    ENDPOINT: '\''+process.env.ENDPOINT + '\'',
+  })
 ];
 const devPlugins = [
   new BundleAnalyzerPlugin({

@@ -15,8 +15,13 @@ services:
       - mongodb
     environment:
       - MONGO_URI=mongodb://mongodb:27017/todos
+      - PORT=8080
     networks:
       - todo
+    expose:
+      - 8080
+    ports:
+      - 8080:8080 # page
 
   client:
     build:
@@ -25,7 +30,14 @@ services:
       - node
     networks:
       - todo
+    environment:
+      - PORT=8081 # page
+      - ENDPOINT=http://todo.liaojungang.com/api # 后端接口地址
+    ports:
+      - 8081:8081 # page
+      # - 8888:8888 # webpack bundle analyzer
 
 networks:
+
   todo:
     driver: bridge

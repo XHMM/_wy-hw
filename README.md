@@ -125,4 +125,18 @@ project
 - 访问 `http://localhost:8081`
 ### 线上部署
 - 在根目录下运行 `docker-compose -f base.yml -f prod.yml up -d`
-- 访问 `http://domain.com`
+- 配置 `nginx` ：
+```
+server {
+    listen 80;
+    server_name domain.com;
+    location /api/ {
+         proxy_pass http://localhost:8080/;
+     }
+    location / {
+         keepalive_timeout 30;
+         proxy_pass http://localhost:8081;
+     }
+ }
+```
+- 访问 `http://domain.com` 即可

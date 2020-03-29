@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
-    "prod": "npm run build && serve build -l 80",
+    "prod": "npm run build && serve build -l ${PORT}",
     "test": "jest",
     "eslint:fix": "eslint ./ --fix --ext .tsx --ext .ts --ignore-path .gitignore --ignore-path .eslintignore"
   },

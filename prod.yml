@@ -5,17 +5,11 @@ services:
     build:
       args:
         - NODE_ENV=production
-    ports:
-      - 8080:8080
     environment:
-      - PORT=8080
       - NODE_ENV=production
     command: npm run prod
 
   client:
-    ports:
-      - 8081:80
     command: npm run prod
     environment:
-      - PORT=8081
       - NODE_ENV=production

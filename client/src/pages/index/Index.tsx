@@ -12,9 +12,18 @@ import { Tabs, Tab, TabsTypeMap, Snackbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Todos } from '~components/Todos';
 import TodoInput from '~components/TodoInput';
+import Img from '~images/bg.jpg'
 
 const useStyles = makeStyles(theme => {
   return {
+    '@global': {
+      body: {
+        background: `url(${Img})`,
+        // backgroundAttachment:"fixed",
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat'
+      }
+    },
     root: {
       [theme.breakpoints.up('sm')]: {
         padding: '20px 10%',
@@ -123,13 +132,13 @@ const Index: FC<Props> = () => {
     <div className={classes.root}>
       <TodoInput placeholder="接下来要做..." value={content} onChange={onContentInputChange} onCreate={createHandler}/>
 
-      <Tabs value={tab} onChange={onTabChange}>
+      <Tabs value={tab} onChange={onTabChange} style={{color: 'white'}}>
         <Tab label="进行中" value={TodoStatus.new} data-testid="tab-new"/>
         <Tab label="已完成" value={TodoStatus.completed} data-testid="tab-completed" />
       </Tabs>
 
       {fetching ? (
-        <div>loading</div>
+        <div style={{fontSize: '15px', margin: '5px 5px', color: 'rgba(255,255,255,0.85)'}}>loading</div>
       ) : (
         <Todos type={tab} todos={currentShowedTodos} onDeleteClick={deleteHandler} onFinishClick={finishHandler} />
       )}

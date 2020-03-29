@@ -6,6 +6,7 @@ COPY package*.json ./
 
 ARG NODE_ENV=development
 COPY ./install.sh ./install.sh
+RUN chmod +x ./install.sh # 在linux下运行时还是得显示加上这么一句
 RUN ./install.sh
 
 COPY . .
